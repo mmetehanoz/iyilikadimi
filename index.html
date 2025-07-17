@@ -563,11 +563,13 @@
             align-items: center;
             justify-content: space-between;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .bank-item-value {
             flex: 1;
             word-break: break-all;
+            min-width: 200px;
         }
 
         .copy-button {
@@ -586,6 +588,7 @@
             gap: 6px;
             min-width: 80px;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .copy-button:hover {
@@ -686,6 +689,10 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
             .card {
                 padding: 30px;
             }
@@ -737,6 +744,161 @@
             .short-embed {
                 height: 400px;
             }
+            
+            /* Bank Section Responsive Styles */
+            .bank-section {
+                margin: 40px 15px;
+                padding: 25px 15px;
+            }
+            
+            .bank-title {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+                letter-spacing: 0.5px;
+            }
+            
+            .bank-card {
+                padding: 20px 15px;
+                border-radius: 16px;
+            }
+            
+            .bank-item {
+                padding: 12px;
+                margin-bottom: 15px;
+                border-radius: 8px;
+            }
+            
+            .bank-item strong {
+                font-size: 0.8em;
+                margin-bottom: 8px;
+            }
+            
+            .bank-item-content {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            
+            .bank-item-value {
+                min-width: auto;
+                word-break: break-all;
+                text-align: center;
+                padding: 8px 0;
+            }
+            
+            .iban {
+                font-size: 0.9em !important;
+                letter-spacing: 0.5px;
+                line-height: 1.3;
+            }
+            
+            .copy-button {
+                width: 100%;
+                padding: 12px;
+                font-size: 0.9em;
+                border-radius: 8px;
+                min-width: auto;
+            }
+            
+            .copy-all-button {
+                padding: 15px 20px;
+                font-size: 0.9em;
+                margin-top: 15px;
+            }
+            
+            .bank-note {
+                padding: 15px;
+                margin-top: 20px;
+                border-radius: 8px;
+                text-align: left;
+            }
+            
+            .bank-note strong {
+                font-size: 0.9em;
+                margin-bottom: 6px;
+            }
+            
+            /* Toast responsive */
+            .toast {
+                right: 10px;
+                left: 10px;
+                transform: translateY(-100px);
+                max-width: calc(100vw - 20px);
+                font-size: 0.9em;
+                padding: 12px 15px;
+            }
+            
+            .toast.show {
+                transform: translateY(0);
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .bank-section {
+                margin: 30px 10px;
+                padding: 20px 10px;
+            }
+            
+            .bank-card {
+                padding: 15px 10px;
+            }
+            
+            .bank-title {
+                font-size: 1.3em;
+            }
+            
+            .bank-item {
+                padding: 10px;
+            }
+            
+            .bank-item strong {
+                font-size: 0.75em;
+            }
+            
+            .bank-item span {
+                font-size: 1em;
+            }
+            
+            .iban {
+                font-size: 0.8em !important;
+                letter-spacing: 0.3px;
+            }
+            
+            .copy-button {
+                padding: 10px;
+                font-size: 0.8em;
+            }
+            
+            .copy-all-button {
+                padding: 12px 15px;
+                font-size: 0.85em;
+            }
+            
+            .bank-note {
+                padding: 12px;
+            }
+        }
+
+        /* Large screens optimization */
+        @media (min-width: 1200px) {
+            .bank-section {
+                max-width: 1200px;
+                padding: 60px;
+            }
+            
+            .bank-card {
+                max-width: 800px;
+                padding: 50px;
+            }
+            
+            .bank-item-content {
+                gap: 20px;
+            }
+            
+            .bank-item-value {
+                min-width: 300px;
+            }
         }
     </style>
 </head>
@@ -751,7 +913,7 @@
         <!-- Header Section -->
         <div class="header">
             <div class="logo">
-                <img src="assets/images/logo.png" alt="İYİLİK ADIMI" class="logo-image">            
+                <img src="logo.png" alt="İYİLİK ADIMI" class="logo-image">            
             </div>
             <div class="tagline">Sitemiz Yenileniyor!</div>
             <div class="contact-bar">
