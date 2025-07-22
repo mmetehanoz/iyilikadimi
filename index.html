@@ -193,13 +193,12 @@
         }
 
         .video-embed {
-            position: relative;
-            width: 100%;
-            height: 280px;
-            border-radius: 16px;
-            overflow: hidden;
-            background: #000;
-            margin-bottom: 20px;
+              position: relative;
+    width: 100%;
+    height: 315px; 
+    overflow: hidden;
+    background: #000;
+    margin-bottom: 20px;
         }
 
         .video-embed iframe {
@@ -209,13 +208,13 @@
         }
 
         .video-placeholder {
-            position: relative;
-            width: 100%;
-            height: 280px;
-            border-radius: 16px;
-            overflow: hidden;
-            background: #f8fafc;
-            margin-bottom: 20px;
+              position: relative;
+    width: 100%;
+    height: 315px; 
+    border-radius: 16px;
+    overflow: hidden;
+    background: #000;
+    margin-bottom: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: block;
@@ -229,17 +228,19 @@
             display: none;
         }
 
-        .video-thumbnail {
-            width: 100%;
-            height: 100%;
-            background-image: url('https://img.youtube.com/vi/ut22ViMc8x8/maxresdefault.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
+       .video-thumbnail {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://img.youtube.com/vi/ut22ViMc8x8/maxresdefault.jpg');
+    background-size: contain; /* cover yerine contain */
+    background-position: center;
+    background-repeat: no-repeat; /* Tekrar etmesin */
+    background-color: #000; /* Boş alanlar için siyah arka plan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
 
         .video-thumbnail::before {
             content: '';
@@ -258,10 +259,10 @@
         }
 
         .play-button {
-            width: 80px;
-            height: 80px;
-            background: rgba(236, 72, 153, 0.9);
-            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background: rgba(72, 168, 236, 0.9);
+            border-radius: 70%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -274,9 +275,150 @@
         }
 
         .play-button:hover {
-            background: rgba(236, 72, 153, 1);
+            background: rgba(72, 168, 236, 0.9);
             transform: scale(1.1);
-            box-shadow: 0 12px 35px rgba(236, 72, 153, 0.6);
+            box-shadow: 0 12px 35px rgba(72, 168, 236, 0.9);
+        }
+
+        /* Gallery Slider Section */
+        .gallery-section {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: slideUp 1s ease-out 0.4s both;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-title {
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #4c1d95;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .sliders-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #4c1d95;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .slider-container {
+            position: relative;
+            height: 320px;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .slider-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider-item {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* cover yerine contain */
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+        .slider-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: #4c1d95;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .slider-nav:hover {
+            background: rgba(99, 102, 241, 0.9);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-nav.prev {
+            left: 15px;
+        }
+
+        .slider-nav.next {
+            right: 15px;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: #4c1d95;
+            transform: scale(1.2);
+        }
+
+        .slider-dot:hover {
+            background: rgba(99, 102, 241, 0.7);
         }
 
         /* YouTube Shorts Section */
@@ -337,7 +479,6 @@
         .short-placeholder {
             width: 100%;
             height: 450px;
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
             border-radius: 16px;
             display: flex;
             flex-direction: column;
@@ -347,37 +488,83 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            border: 2px dashed rgba(236, 72, 153, 0.3);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Thumbnails için background overlay */
+        .short-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .short-placeholder:hover::before {
+            background: rgba(0, 0, 0, 0.2);
         }
 
         .short-placeholder:hover {
-            background: linear-gradient(135deg, #fef2f2, #fdf2f8);
             transform: scale(1.02);
-            border-color: rgba(236, 72, 153, 0.5);
+            box-shadow: 0 15px 40px rgba(236, 72, 153, 0.3);
+        }
+
+        /* Spesifik thumbnail arka planları - buraya local resim dosyalarınızın isimlerini yazacaksınız */
+        .short-placeholder.kurban-thumbnail {
+            background-image: url('kurban-thumbnail.jpg'); /* Kurban video kapak resmi */
+        }
+
+        .short-placeholder.sadaka-thumbnail {
+            background-image: url('sadaka-thumbnail.jpg'); /* Sadaka video kapak resmi */
+        }
+
+        .short-placeholder.hijyen-thumbnail {
+            background-image: url('hijyen-thumbnail.jpg'); /* Hijyen paketi video kapak resmi */
+        }
+
+        .short-placeholder.gazze-thumbnail {
+            background-image: url('gazze-thumbnail.jpg'); /* Gazze yardım video kapak resmi */
         }
 
         .short-placeholder-content {
             text-align: center;
-            color: #6b7280;
+            color: white;
             z-index: 2;
+            position: relative;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .short-placeholder-icon {
             font-size: 3em;
             margin-bottom: 15px;
             color: #ec4899;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .short-placeholder-text {
             font-size: 1.1em;
             font-weight: 600;
             margin-bottom: 8px;
-            color: #4c1d95;
+            color: white;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
         }
 
         .short-placeholder-subtext {
             font-size: 0.9em;
-            opacity: 0.7;
+            opacity: 0.9;
+            color: #fbbf24;
+            font-weight: 500;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .short-embed {
@@ -693,6 +880,7 @@
                 padding: 20px 15px;
             }
             
+            
             .card {
                 padding: 30px;
             }
@@ -715,6 +903,41 @@
             
             .social-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Gallery responsive */
+            .gallery-section {
+                padding: 30px 20px;
+                margin: 40px 20px 60px;
+            }
+
+            .gallery-title {
+                font-size: 1.8em;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .sliders-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .slider-container {
+                height: 280px;
+            }
+
+            .slider-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .slider-nav.prev {
+                left: 10px;
+            }
+
+            .slider-nav.next {
+                right: 10px;
             }
             
             .shorts-section {
@@ -835,6 +1058,19 @@
 
         /* Extra small screens */
         @media (max-width: 480px) {
+            .gallery-section {
+                margin: 20px 10px;
+                padding: 20px 10px;
+            }
+            
+            .gallery-title {
+                font-size: 1.5em;
+            }
+            
+            .slider-container {
+                height: 250px;
+            }
+            
             .bank-section {
                 margin: 30px 10px;
                 padding: 20px 10px;
@@ -882,6 +1118,19 @@
 
         /* Large screens optimization */
         @media (min-width: 1200px) {
+            .gallery-section {
+                max-width: 1400px;
+                padding: 60px;
+            }
+            
+            .sliders-container {
+                gap: 40px;
+            }
+            
+            .slider-container {
+                height: 360px;
+            }
+            
             .bank-section {
                 max-width: 1200px;
                 padding: 60px;
@@ -953,6 +1202,61 @@
             </div>
         </div>
 
+        <!-- Gallery Slider Section -->
+        <div class="gallery-section">
+            <h2 class="gallery-title">
+                
+                <span>Galeri</span>
+            </h2>
+            
+            <div class="sliders-container">
+                <!-- Sol Slider -->
+                <div class="slider-wrapper">
+                    <h3 class="slider-title">Aktif Projelerimiz</h3>
+                    <div class="slider-container">
+                        <div class="slider-track" id="sliderTrack1">
+                            <div class="slider-item">
+                                <img src="galeri1.jpg" alt="Proje Görseli 1">
+                            </div>
+                            <div class="slider-item">
+                                <img src="galeri2.jpg" alt="Proje Görseli 2">
+                            </div>
+                            <div class="slider-item">
+                                <img src="galeri3.jpg" alt="Proje Görseli 3">
+                            </div>
+                            <div class="slider-item">
+                                <img src="galeri4.jpg" alt="Proje Görseli 4">
+                            </div>
+                        </div>
+                        <button class="slider-nav prev" onclick="prevSlide(1)">‹</button>
+                        <button class="slider-nav next" onclick="nextSlide(1)">›</button>
+                    </div>
+                    <div class="slider-dots" id="sliderDots1"></div>
+                </div>
+
+                <!-- Sağ Slider -->
+                <div class="slider-wrapper">
+                    <h3 class="slider-title">Basın</h3>
+                    <div class="slider-container">
+                        <div class="slider-track" id="sliderTrack2">
+                            <div class="slider-item">
+                                <img src="galeri5.jpg" alt="Proje Görseli 5">
+                            </div>
+                            <div class="slider-item">
+                                <img src="galeri6.jpg" alt="Proje Görseli 6">
+                            </div>
+                            <div class="slider-item">
+                                <img src="galeri7.jpg" alt="Proje Görseli 7">
+                            </div>
+                        </div>
+                        <button class="slider-nav prev" onclick="prevSlide(2)">‹</button>
+                        <button class="slider-nav next" onclick="nextSlide(2)">›</button>
+                    </div>
+                    <div class="slider-dots" id="sliderDots2"></div>
+                </div>
+            </div>
+        </div>
+
         <!-- YouTube Shorts Section -->
         <div class="shorts-section">
             <h2 class="shorts-title">
@@ -963,14 +1267,10 @@
             </p>
             
             <div class="shorts-grid">
-                <!-- Short 1 -->
+                <!-- Short 1 - Kurban -->
                 <div class="short-item">
-                    <div class="short-placeholder" onclick="loadShort(1, 'WM8XNvKOTXY')">
-                        <div class="short-placeholder-content">
-                            <div class="short-placeholder-icon">🐐</div>
-                            <div class="short-placeholder-text">2025 Kurban Organizasyonumuz</div>
-                            <div class="short-placeholder-subtext">İzlemek İçin Tıklayınız</div>
-                        </div>
+                    <div class="short-placeholder kurban-thumbnail" onclick="loadShort(1, 'WM8XNvKOTXY')">
+                        <div class="play-button">▶️</div>
                     </div>
                     <div class="short-embed" id="shortEmbed1">
                         <iframe 
@@ -986,15 +1286,10 @@
                     <div class="short-description">Kurban organizasyonumuzdan kısa bir video...</div>
                 </div>
                 
-
-                <!-- Short 2 -->
+                <!-- Short 2 - Sadaka -->
                 <div class="short-item">
-                    <div class="short-placeholder" onclick="loadShort(2, 'CABHqIocwiQ')">
-                        <div class="short-placeholder-content">
-                            <div class="short-placeholder-icon">💫</div>
-                            <div class="short-placeholder-text">❝Sadakanız geçici değil, kalıcı iyiliğe dönüşsün!❞</div>
-                            <div class="short-placeholder-subtext">İzlemek İçin Tıklayınız</div>
-                        </div>
+                    <div class="short-placeholder sadaka-thumbnail" onclick="loadShort(2, 'CABHqIocwiQ')">
+                        <div class="play-button">▶️</div>
                     </div>
                     <div class="short-embed" id="shortEmbed2">
                         <iframe 
@@ -1010,14 +1305,10 @@
                     <div class="short-description">❝Sadakanız geçici değil, kalıcı iyiliğe dönüşsün!❞</div>
                 </div>
 
-                <!-- Short 3 -->
+                <!-- Short 3 - Hijyen -->
                 <div class="short-item">
-                    <div class="short-placeholder" onclick="loadShort(3, '0d-Yn3TCrsg')">
-                        <div class="short-placeholder-content">
-                            <div class="short-placeholder-icon">🧼</div>
-                            <div class="short-placeholder-text">Hijyen Paketi</div>
-                            <div class="short-placeholder-subtext">İzlemek İçin Tıklayınız</div>
-                        </div>
+                    <div class="short-placeholder hijyen-thumbnail" onclick="loadShort(3, '0d-Yn3TCrsg')">
+                       <div class="play-button">▶️</div>
                     </div>
                     <div class="short-embed" id="shortEmbed3">
                         <iframe 
@@ -1033,14 +1324,10 @@
                     <div class="short-description">❝Sen de bir hijyen paketi bağışla, bir yuvaya sağlık ve umut taşı!❞</div>
                 </div>
 
-                <!-- Short 4 -->
+                <!-- Short 4 - Gazze -->
                 <div class="short-item">
-                    <div class="short-placeholder" onclick="loadShort(4, '_bjyBQQXupQ')">
-                        <div class="short-placeholder-content">
-                            <div class="short-placeholder-icon">🇵🇸</div>
-                            <div class="short-placeholder-text">Gazze Acil Yardım</div>
-                            <div class="short-placeholder-subtext">İzlemek İçin Tıklayınız</div>
-                        </div>
+                    <div class="short-placeholder gazze-thumbnail" onclick="loadShort(4, '_bjyBQQXupQ')">
+                        <div class="play-button">▶️</div>
                     </div>
                     <div class="short-embed" id="shortEmbed4">
                         <iframe 
@@ -1056,8 +1343,6 @@
                     <div class="short-description">❝Her gün sıcak yemek ve temiz su ulaştırmaya devam ediyoruz.❞</div>
                 </div>
             </div>
-            
-           
         </div>
 
         <!-- Social Media Section -->
@@ -1074,7 +1359,7 @@
                 </a>
                 <a href="https://twitter.com/iyilikadimitr" class="social-link" target="_blank">
                     <span class="social-icon">🐦</span>
-                    <span>Twitter</span>
+                    <span>X</span>
                 </a>
                 <a href="https://linkedin.com/company/iyilikadimitr" class="social-link" target="_blank">
                     <span class="social-icon">💼</span>
@@ -1108,7 +1393,7 @@
                     <div class="bank-item">
                         <strong>Banka:</strong>
                         <div class="bank-item-content">
-                            <span class="bank-item-value">VakıfBank</span>
+                            <span class="bank-item-value">Vakıf Katılım</span>
                             <button class="copy-button" onclick="copyToClipboard('VakıfBank', this)">
                                 📋 Kopyala
                             </button>
@@ -1138,6 +1423,69 @@
     </div>
 
     <script>
+        // Slider state
+        let currentSlide = {1: 0, 2: 0};
+        let slideCount = {1: 4, 2: 3}; // Sol slider 4 resim, sağ slider 3 resim
+
+        // Initialize sliders
+        document.addEventListener('DOMContentLoaded', function() {
+            initSliders();
+        });
+
+        function initSliders() {
+            // Her slider için dots oluştur
+            for (let sliderId = 1; sliderId <= 2; sliderId++) {
+                createDots(sliderId);
+                updateSlider(sliderId);
+            }
+        }
+
+        function createDots(sliderId) {
+            const dotsContainer = document.getElementById(`sliderDots${sliderId}`);
+            dotsContainer.innerHTML = '';
+            
+            for (let i = 0; i < slideCount[sliderId]; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'slider-dot';
+                dot.onclick = () => goToSlide(sliderId, i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function nextSlide(sliderId) {
+            currentSlide[sliderId] = (currentSlide[sliderId] + 1) % slideCount[sliderId];
+            updateSlider(sliderId);
+        }
+
+        function prevSlide(sliderId) {
+            currentSlide[sliderId] = (currentSlide[sliderId] - 1 + slideCount[sliderId]) % slideCount[sliderId];
+            updateSlider(sliderId);
+        }
+
+        function goToSlide(sliderId, slideIndex) {
+            currentSlide[sliderId] = slideIndex;
+            updateSlider(sliderId);
+        }
+
+        function updateSlider(sliderId) {
+            const track = document.getElementById(`sliderTrack${sliderId}`);
+            const dots = document.querySelectorAll(`#sliderDots${sliderId} .slider-dot`);
+            
+            // Slider'ı hareket ettir
+            track.style.transform = `translateX(-${currentSlide[sliderId] * 100}%)`;
+            
+            // Dots'ları güncelle
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide[sliderId]);
+            });
+        }
+
+        // Auto-play functionality (isteğe bağlı)
+        setInterval(() => {
+            nextSlide(1);
+            nextSlide(2);
+        }, 5000); // Her 5 saniyede bir otomatik geçiş
+
         // Video yükleme fonksiyonu
         function loadVideo() {
             const placeholder = document.getElementById('videoPlaceholder');
@@ -1152,7 +1500,7 @@
             embed.classList.remove('hidden');
         }
         
-        // YouTube Shorts yükleme fonksiyonu - DÜZELTİLDİ
+        // YouTube Shorts yükleme fonksiyonu
         function loadShort(shortNumber, videoId) {
             const placeholder = document.querySelector(`#shortEmbed${shortNumber}`).previousElementSibling;
             const embed = document.getElementById(`shortEmbed${shortNumber}`);
