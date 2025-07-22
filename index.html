@@ -71,9 +71,18 @@
         }
 
         .header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 60px;
             animation: slideDown 1s ease-out;
+            position: relative;
+            background-image: url('header.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 60px 40px;
+            margin: 0 20px 60px;
         }
 
         @keyframes slideDown {
@@ -91,12 +100,13 @@
             font-size: 4em;
             font-weight: 700;
             margin-bottom: 20px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             letter-spacing: -2px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
         }
 
         .logo-image {
@@ -106,41 +116,51 @@
 
         .tagline {
             font-size: 1.4em;
-            color: #6b7280;
-            font-weight: 300;
+            color: #1f2937;
+            font-weight: 500;
             margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
+            max-width: fit-content;
+            margin-left: 0;
             margin-right: auto;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 24px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: left;
+            display: inline-block;
         }
 
         .contact-bar {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 30px;
             margin-bottom: 20px;
             flex-wrap: wrap;
         }
 
         .contact-item {
-            background: rgba(99, 102, 241, 0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
             padding: 12px 24px;
             border-radius: 50px;
             display: flex;
             align-items: center;
             gap: 10px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             text-decoration: none;
-            color: #4c1d95;
-            font-weight: 500;
+            color: #1f2937;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .contact-item:hover {
             transform: translateY(-3px);
-            background: rgba(99, 102, 241, 0.2);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.6);
         }
 
         .main-grid {
@@ -893,8 +913,101 @@
             100% { transform: scale(1); }
         }
 
+        /* Footer Section Styles */
+        .footer-section {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            text-align: center;
+            animation: slideUp 1s ease-out 1.2s both;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .footer-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-icon {
+            font-size: 1.5em;
+            min-width: 30px;
+        }
+
+        .footer-text {
+            font-size: 1em;
+            line-height: 1.4;
+            text-align: left;
+            flex: 1;
+        }
+
+        .footer-link {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-align: left;
+        }
+
+        .footer-link:hover {
+            color: #f59e0b;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-bottom p {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin: 0;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
+            /* Header responsive */
+            .header {
+                margin: 0 10px 40px;
+                padding: 40px 15px;
+                border-radius: 16px;
+            }
+            
             .container {
                 padding: 20px 15px;
             }
@@ -915,7 +1028,7 @@
             
             .contact-bar {
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
                 gap: 15px;
             }
             
@@ -1033,15 +1146,22 @@
             
             .bank-item-value {
                 min-width: auto;
-                word-break: break-all;
+                word-break: keep-all;
+                overflow-wrap: break-word;
                 text-align: center;
                 padding: 8px 0;
+                line-height: 1.4;
             }
             
             .iban {
                 font-size: 0.9em !important;
                 letter-spacing: 0.5px;
-                line-height: 1.3;
+                line-height: 1.4;
+                word-break: keep-all;
+                overflow-wrap: normal;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             
             .copy-button {
@@ -1070,6 +1190,33 @@
                 margin-bottom: 6px;
             }
             
+            /* Footer responsive */
+            .footer-section {
+                padding: 30px 15px 15px;
+                margin-top: 40px;
+            }
+            
+            .footer-title {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+            
+            .footer-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+                padding: 12px;
+            }
+            
+            .footer-text,
+            .footer-link {
+                text-align: center;
+            }
+            
+            .footer-icon {
+                font-size: 1.3em;
+            }
+            
             /* Toast responsive */
             .toast {
                 right: 10px;
@@ -1087,6 +1234,19 @@
 
         /* Extra small screens */
         @media (max-width: 480px) {
+            /* Header extra small */
+            .header {
+                margin: 0 5px 30px;
+                padding: 30px 10px;
+                border-radius: 12px;
+            }
+            
+            .tagline {
+                font-size: 1.1em;
+                padding: 10px 20px;
+                border-radius: 25px;
+            }
+            
             .gallery-section {
                 margin: 20px 10px;
                 padding: 20px 10px;
@@ -1128,6 +1288,12 @@
             .iban {
                 font-size: 0.8em !important;
                 letter-spacing: 0.3px;
+                word-break: keep-all;
+                overflow-wrap: normal;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1.3;
             }
             
             .copy-button {
@@ -1143,10 +1309,33 @@
             .bank-note {
                 padding: 12px;
             }
+
+            .footer-section {
+                padding: 25px 10px 10px;
+            }
+            
+            .footer-title {
+                font-size: 1.3em;
+            }
+            
+            .footer-item {
+                padding: 10px;
+            }
+            
+            .footer-text {
+                font-size: 0.9em;
+            }
         }
 
         /* Large screens optimization */
         @media (min-width: 1200px) {
+            /* Header large screens */
+            .header {
+                margin: 0 40px 80px;
+                padding: 80px 40px;
+                border-radius: 24px;
+            }
+            
             .gallery-section {
                 max-width: 1400px;
                 padding: 60px;
@@ -1448,6 +1637,34 @@
                     <strong>📝 Önemli Not:</strong>
                     Açıklama kısmına "Ad - Soyad, Telefon No ve Bağış" yazılmalıdır.
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Info Section -->
+    <div class="footer-section">
+        <div class="footer-content">
+            <h3 class="footer-title">İletişim Bilgileri</h3>
+            <div class="footer-info">
+                <div class="footer-item">
+                    <span class="footer-icon">🏢</span>
+                    <span class="footer-text">İyilik Adımı Uluslararası İnsani Yardım Derneği</span>
+                </div>
+                <div class="footer-item">
+                    <span class="footer-icon">📍</span>
+                    <span class="footer-text">Yukarı Dudullu Mh. Alemdağ Cd. No: 758 B - Ümraniye İstanbul</span>
+                </div>
+                <div class="footer-item">
+                    <span class="footer-icon">📧</span>
+                    <a href="mailto:info@iyilikadimi.org.tr" class="footer-link">info@iyilikadimi.org.tr</a>
+                </div>
+                <div class="footer-item">
+                    <span class="footer-icon">✅</span>
+                    <span class="footer-text">İyilik Adımı Uluslararası İnsani Yardım Derneği, düzenli aralıklarla resmi makamlarca denetlenmekte ve dernek bilgileri e-Devlet üzerinden kolayca sorgulanabilmektedir.</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Babil Yazılım. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </div>
