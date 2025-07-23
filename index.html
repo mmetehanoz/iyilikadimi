@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yakında Açılıyor | SiteBiz</title>
+    <title>Sitemiz Yenileniyor | İyilikAdımı</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -701,14 +703,44 @@
             color: #4c1d95;
             font-weight: 600;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .social-link:hover {
             transform: translateY(-3px);
-            background: linear-gradient(135deg, #ec4899, #8b5cf6);
             color: white;
             border-color: transparent;
-            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link.facebook:hover {
+            background: linear-gradient(135deg, #1877f2, #4267B2);
+        }
+
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-link.twitter:hover {
+            background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+        }
+
+        .social-link.linkedin:hover {
+            background: linear-gradient(135deg, #0077b5, #005885);
+        }
+
+        .social-link.youtube:hover {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+        }
+
+        .social-link.tiktok:hover {
+            background: linear-gradient(135deg, #000000, #25f4ee);
+        }
+
+        .social-icon {
+            font-size: 1.5em;
+            transition: all 0.3s ease;
         }
 
         .bank-section {
@@ -1568,28 +1600,28 @@
         <div class="social-section">
             <h2 class="social-title">Sosyal Medyada Bizi Takip Edin</h2>
             <div class="social-grid">
-                <a href="https://facebook.com/iyilikadimitr" class="social-link" target="_blank">
-                    <span class="social-icon">📘</span>
+                <a href="https://facebook.com/iyilikadimitr" class="social-link facebook" target="_blank">
+                    <i class="fab fa-facebook-f social-icon"></i>
                     <span>Facebook</span>
                 </a>
-                <a href="https://instagram.com/iyilikadimitr" class="social-link" target="_blank">
-                    <span class="social-icon">📸</span>
+                <a href="https://instagram.com/iyilikadimitr" class="social-link instagram" target="_blank">
+                    <i class="fab fa-instagram social-icon"></i>
                     <span>Instagram</span>
                 </a>
-                <a href="https://twitter.com/iyilikadimitr" class="social-link" target="_blank">
-                    <span class="social-icon">🐦</span>
+                <a href="https://twitter.com/iyilikadimitr" class="social-link twitter" target="_blank">
+                    <i class="fab fa-x-twitter social-icon"></i>
                     <span>X</span>
                 </a>
-                <a href="https://linkedin.com/company/iyilikadimitr" class="social-link" target="_blank">
-                    <span class="social-icon">💼</span>
+                <a href="https://linkedin.com/company/iyilikadimitr" class="social-link linkedin" target="_blank">
+                    <i class="fab fa-linkedin-in social-icon"></i>
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://youtube.com/@iyilikadimitr" class="social-link" target="_blank">
-                    <span class="social-icon">📹</span>
+                <a href="https://youtube.com/@iyilikadimitr" class="social-link youtube" target="_blank">
+                    <i class="fab fa-youtube social-icon"></i>
                     <span>YouTube</span>
                 </a>
-                <a href="https://tiktok.com/@iyilikadimitr" class="social-link" target="_blank">
-                    <span class="social-icon">🎵</span>
+                <a href="https://tiktok.com/@iyilikadimitr" class="social-link tiktok" target="_blank">
+                    <i class="fab fa-tiktok social-icon"></i>
                     <span>TikTok</span>
                 </a>
             </div>
@@ -1672,7 +1704,7 @@
     <script>
         // Slider state
         let currentSlide = {1: 0, 2: 0};
-        let slideCount = {1: 5, 2: 2}; // Sol slider 4 resim, sağ slider 3 resim
+        let slideCount = {1: 5, 2: 2}; // Sol slider 5 resim, sağ slider 2 resim
 
         // Initialize sliders
         document.addEventListener('DOMContentLoaded', function() {
