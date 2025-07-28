@@ -79,12 +79,64 @@
             position: relative;
             background-image: url('header.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-repeat: no-repeat;
+            background-attachment: scroll;
             border-radius: 20px;
             overflow: hidden;
             padding: 60px 40px;
             margin: 0 20px 60px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Desktop için özel background ayarları */
+        @media (min-width: 769px) {
+            .header {
+                min-height: 350px;
+                background-attachment: scroll;
+                background-size: cover;
+                background-position: center center;
+                padding: 60px 40px;
+            }
+            
+            .logo {
+                font-size: 4em;
+                margin-bottom: 20px;
+                gap: 20px;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            
+            .logo-image {
+                height: 80px;
+                width: auto;
+            }
+            
+            .tagline {
+                font-size: 1.4em;
+                padding: 12px 24px;
+                border-radius: 30px;
+                margin-bottom: 40px;
+                width: fit-content;
+            }
+            
+            .contact-bar {
+                flex-direction: row;
+                align-items: center;
+                gap: 30px;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+            
+            .contact-item {
+                padding: 12px 24px;
+                border-radius: 50px;
+                font-size: 1em;
+            }
         }
 
         @keyframes slideDown {
@@ -1036,8 +1088,16 @@
             /* Header responsive */
             .header {
                 margin: 0 10px 40px;
-                padding: 40px 15px;
+                padding: 30px 20px;
                 border-radius: 16px;
+                min-height: 180px;
+                background-size: cover;
+                background-position: center center;
+                background-attachment: scroll;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
             }
             
             .container {
@@ -1049,19 +1109,38 @@
             }
             
             .logo {
-                font-size: 2.5em;
-                flex-direction: column;
-                gap: 15px;
+                font-size: 2em;
+                flex-direction: row;
+                gap: 10px;
+                margin-bottom: 15px;
+                align-items: center;
+                justify-content: flex-start;
             }
             
             .logo-image {
-                height: 60px;
+                height: 50px;
+                width: auto;
+            }
+            
+            .tagline {
+                font-size: 1em;
+                padding: 8px 16px;
+                border-radius: 20px;
+                margin-bottom: 20px;
+                width: fit-content;
             }
             
             .contact-bar {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            
+            .contact-item {
+                padding: 8px 16px;
+                border-radius: 25px;
+                font-size: 0.9em;
             }
             
             .social-grid {
@@ -1269,14 +1348,43 @@
             /* Header extra small */
             .header {
                 margin: 0 5px 30px;
-                padding: 30px 10px;
+                padding: 20px 15px;
                 border-radius: 12px;
+                min-height: 150px;
+                background-size: cover;
+                background-position: center center;
+                background-attachment: scroll;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            
+            .logo {
+                font-size: 1.8em;
+                margin-bottom: 10px;
+                gap: 8px;
+            }
+            
+            .logo-image {
+                height: 40px;
             }
             
             .tagline {
-                font-size: 1.1em;
-                padding: 10px 20px;
-                border-radius: 25px;
+                font-size: 0.9em;
+                padding: 6px 12px;
+                border-radius: 18px;
+                margin-bottom: 15px;
+            }
+            
+            .contact-bar {
+                gap: 8px;
+            }
+            
+            .contact-item {
+                padding: 6px 12px;
+                font-size: 0.8em;
+                border-radius: 20px;
             }
             
             .gallery-section {
@@ -1359,13 +1467,58 @@
             }
         }
 
-        /* Large screens optimization */
+        /* Very small screens - 360px and below */
+        @media (max-width: 360px) {
+            .header {
+                margin: 0 3px 25px;
+                padding: 15px 10px;
+                border-radius: 10px;
+                min-height: 130px;
+                background-size: cover;
+                background-position: center center;
+                background-attachment: scroll;
+            }
+            
+            .logo {
+                font-size: 1.5em;
+                margin-bottom: 8px;
+                gap: 6px;
+            }
+            
+            .logo-image {
+                height: 35px;
+            }
+            
+            .tagline {
+                font-size: 0.8em;
+                padding: 5px 10px;
+                border-radius: 15px;
+                margin-bottom: 12px;
+            }
+            
+            .contact-bar {
+                gap: 6px;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+            
+            .contact-item {
+                padding: 5px 10px;
+                font-size: 0.75em;
+                border-radius: 18px;
+                width: fit-content;
+            }
+        }
         @media (min-width: 1200px) {
             /* Header large screens */
             .header {
                 margin: 0 40px 80px;
-                padding: 80px 40px;
+                padding: 80px 60px;
                 border-radius: 24px;
+                min-height: 400px;
+                background-size: cover;
+                background-position: center center;
             }
             
             .gallery-section {
@@ -1414,11 +1567,11 @@
             <div class="logo">
                 <img src="logo.png" alt="İYİLİK ADIMI" class="logo-image">            
             </div>
-            <div class="tagline">Sitemiz Yenileniyor!</div>
+          <!--   <div class="tagline">Sitemiz Yenileniyor!</div> -->
             <div class="contact-bar">
-                <a href="tel:+905322365797" class="contact-item">
+             <!--    <a href="tel:+905322365797" class="contact-item"> 
                     <span>📞</span>
-                    <span>+90 532 236 57 97</span>
+                    <span>+90 532 236 57 97</span> -->
                 </a>
                 <a href="https://wa.me/message/CKUMQPHTUAGVI1" class="contact-item" target="_blank">
                     <span>💬</span>
